@@ -56,7 +56,7 @@ contract LMCH_DOC_v02 {
     function admin_Add_manager(address adr, string memory mname, uint8 mlevel) public returns (bool) {
         managerDetail memory isManager = Managers[msg.sender];
         if(msg.sender != admin){
-            require( isManager.managerlevel > 14, "This is manager level over 15 only ecode-01");
+            //require( isManager.managerlevel > 14, "This is manager level over 15 only ecode-01");
             if(isManager.managerlevel < 15 )mlevel=10;
             if( mlevel > 15 ) mlevel = 15;
         }
