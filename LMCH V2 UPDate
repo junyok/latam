@@ -57,7 +57,7 @@ contract LMCH_DOC_v02 {
         managerDetail memory isManager = Managers[msg.sender];
         if(msg.sender != admin){
             require( isManager.managerlevel > 9, "This is manager level over 10 only ecode-01");
-            require( mlevel <  1, "Manager level should bigger then 0 ecode-02");
+            require( mlevel >  1, "Manager level should bigger then 0 ecode-02");
             if( mlevel > 15 ) mlevel = 15;
         }
         isManager = Managers[adr];
