@@ -158,7 +158,8 @@ contract LMCH_DOC_v02 {
         uint256 LockhasTime = Locked_list[sender].releaseTime;
         uint256 LockhasMax = Locked_list[sender].lockedTokencnt;
         if( block.timestamp < LockhasTime){
-            uint256 OK1 = _balances[sender] - LockhasMax;
+            //uint256 OK1 = _balances[sender] - LockhasMax;
+            uint256 OK1 = _balances[sender].sub(LockhasMax, "ERC20: the amount to unlock is bigger then locked token count");
             require( OK1 >= amount , "Your Wallet has time lock");
         }
 
